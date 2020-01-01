@@ -44,8 +44,9 @@ RUN echo '***** Download and build XSB 3.8 *****'               \
     && tar -xf XSB3.8.tar.gz                                    \
     && cd XSB/build                                             \
     && ./configure                                              \
-    && ./makexsb                                                \
-    && cd                                                       \
-    && echo 'export PATH="/home/yw/XSB/bin:$PATH"' >> .bashrc
-    
+    && ./makexsb
+
+
+RUN echo 'PATH=/home/yw/XSB/bin:$PATH' >> .bashrc
+
 CMD  /bin/bash -il
